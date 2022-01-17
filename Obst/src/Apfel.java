@@ -1,5 +1,9 @@
-public class Apfel  {
+public class Apfel extends Obst  {
+public Apfel() {
+    super("Apfel");
 
+
+}
 
     }
 

@@ -1,7 +1,7 @@
 public class Programm  {
     public static void main(String[] args) {
-         Apfel apfel = new apfel();
 
+Apfel Apfel = new Apfel();
         Apfel.setFarbe("Grün");
         Apfel.setGewicht(250);
         Apfel.setReife(true);

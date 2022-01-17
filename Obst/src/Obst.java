@@ -1,7 +1,8 @@
 public abstract class Obst {
-    private String name;
-    private String farbe;
-    private double gewicht;
+
+    private  String name;
+    private  String farbe;
+    private  double gewicht;
     private boolean reif;
 
 
@@ -9,7 +10,7 @@ public abstract class Obst {
     public  Obst(String name) {
         this.name = name;
     }
-    public String getName() {
+    public  String getName() {
         return name;
     }
 
@@ -32,6 +33,7 @@ public abstract class Obst {
     public boolean getReife(boolean reif) {
         return reif;
     }
-    public void setReife(boolean reif) {
-        this.reif = reif;
-}}
+    public static void setReife(boolean reif) {
+        reif = reif;
+}
+}
