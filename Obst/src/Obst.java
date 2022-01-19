@@ -6,28 +6,45 @@ public abstract class Obst {
     private boolean reif;
 
 
-    public  Obst(String name) {
+    public  Obst(String name)
+    {
         this.name = name;
     }
-    public  String getName() {
+    public  String getName()
+    {
         return name;
     }
-    public String getFarbe() {
+    public String getFarbe()
+    {
         return farbe;
     }
-    public void setFarbe(String farbe) {
+    public void setFarbe(String farbe)
+    {
         this.farbe = farbe;
     }
     public double getGewicht() {
         return gewicht;
+
     }
-    public void setGewicht(double gewicht) {
+    public void setGewicht(double gewicht)
+    {
         this.gewicht = gewicht;
     }
-    public boolean getReife(boolean reif) {
+
+    public boolean isReif() {
+
         return reif;
     }
-    public static void setReife(boolean reif) {
-        reif = reif;
-}
+
+    public void setReife(boolean reif) {
+        this.reif = reif;
+    }
+    @Override
+    public String toString() {
+        String text = "Name" + name;
+        text = "Farbe" + farbe;
+        text = "Gewicht" + gewicht;
+        text = "Reif" + reif;
+        return  text;
+    }
 }

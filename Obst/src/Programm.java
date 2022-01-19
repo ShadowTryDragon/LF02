@@ -8,6 +8,7 @@ Apfel Apfel = new Apfel();
 
         System.out.println(Apfel.getName());
         System.out.println(Apfel.getGewicht());
+        System.out.println(Apfel.isReif());
  Banane banane = new Banane();
  banane.setKruemmung(0.5);
         System.out.println(banane.getName());
