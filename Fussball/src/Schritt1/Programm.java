@@ -16,7 +16,7 @@ public class Programm {
         spielerArrayList1.add(spieler2);
         spielerArrayList1.add(spieler3);
         spielerArrayList1.add(spieler4);
-        Mannschaft mannschaft1 = new Mannschaft("Bremen","Hugo","Mo",  );
+        Mannschaft mannschaft1 = new Mannschaft("Bremen", trainer1 , torwart1, spielerArrayList1);
         System.out.println(mannschaft1);
         System.out.println();
 
@@ -31,7 +31,7 @@ public class Programm {
         spielerArrayList2.add(spieler2_);
         spielerArrayList2.add(spieler3_);
         spielerArrayList2.add(spieler4_);
-        Mannschaft mannschaft2 = new Mannschaft("SVW","Nito","Haru", );
+        Mannschaft mannschaft2 = new Mannschaft("SVW",trainer2,torwart2,spielerArrayList2 );
         System.out.println(mannschaft2);
         System.out.println();
         Spiel spiel = new Spiel(mannschaft1,mannschaft2,ergebnis);
