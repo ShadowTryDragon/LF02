@@ -2,8 +2,7 @@ package Schritt1;
 
 import java.util.Random;
 
-public class Gameplay
-{
+public class Gameplay {
 
     private static final int SPIELZEIT = 90;
     private static final int MAX_NACHSPIELZEIT = 5;
@@ -46,7 +45,7 @@ public class Gameplay
                     spiel.getErgebnis().addToreHeim();
                 }
                 else {
-                    spiel.getErgebnis().addToreGast();
+                    spiel.getErgebnis().GastTreffer().;
                 }
                 spiel.getSpielverlauf().append(spielMinute + ": Tor von " + schuetze.getName() + "!\n");
             }
@@ -65,7 +64,7 @@ public class Gameplay
      * @return Der Stärkewert.
      */
     private static int ermittelMannschaftsWert(Mannschaft mannschaft) {
-        int wert = mannschaft.getGesamtStaerke() * mannschaft.getGesamtStaerke() * mannschaft.getTrainer().getErfahrung();
+        int wert = mannschaft.getGesamtStaerke() * mannschaft.getGesamtMotivation() * mannschaft.getTrainer().getErfahrung();
         wert = Math.max(1, wert);
         return wert;
     }
@@ -96,3 +95,7 @@ public class Gameplay
     }
 
 }
+© 2022 GitHub, Inc.
+        Terms
+        Privacy
+        Se
