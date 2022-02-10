@@ -1,3 +1,7 @@
+package rollenspiel;
+
+import rollenspiel.KeineKraftExeption;
+
 public abstract class Spielfigur  {
     //Attribute erzeugen
     private String name;
@@ -21,21 +25,23 @@ public abstract class Spielfigur  {
         return staerkepunkte;
     }
     //setter Stärke
-    public void setAlter(int alter) {
+    protected void setStaerkepunkte(int staerkepunkte) {
         this.staerkepunkte = staerkepunkte;
     }
-public void laufen() throws KeineKraftExeption {
-    if (getStaerkepunkte() > 1) {
-        System.out.println(getName() + "läuft");
+
+
+    public void laufen() throws KeineKraftExeption {
+    if (getStaerkepunkte() >= 1) {
+        System.out.println(getName() + " läuft");
         staerkepunkte = staerkepunkte - 1;
     } else
         throw new KeineKraftExeption("laufen", getName());
 }
 
 public void klettern() throws KeineKraftExeption {
-    if (getStaerkepunkte() > 2) {
-        System.out.println(getName() + "klettert");
-        staerkepunkte = staerkepunkte - 1;
+    if (getStaerkepunkte() >= 2) {
+        System.out.println(getName() + " klettert");
+        staerkepunkte = staerkepunkte - 2;
     } else
         throw new KeineKraftExeption("klettern", getName());
 
@@ -45,8 +51,8 @@ public void essen()
 
 }
 public void kaempfen() throws KeineKraftExeption {
-    if (getStaerkepunkte() > 3) {
-        System.out.println(getName() + "kämpft");
+    if (getStaerkepunkte() >= 3) {
+        System.out.println(getName() + " kämpft");
         staerkepunkte = staerkepunkte - 3;
     } else
         throw new KeineKraftExeption("kämpfen", getName());

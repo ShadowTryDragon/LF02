@@ -1,3 +1,7 @@
+package rollenspiel;
+
+
+
 public class Zauberer extends Spielfigur {
     private int zauberpunkte;
 
@@ -12,8 +16,8 @@ public class Zauberer extends Spielfigur {
     }
 
     public void zaubern() throws KeineKraftExeption {
-        if (getZauberpunkte() > 0) {
-            System.out.println(getName() + "zaubert");
+        if (getZauberpunkte() >= 0) {
+            System.out.println(getName() + " zaubert");
             zauberpunkte = zauberpunkte - 1;
         } else
             throw new KeineKraftExeption("zaubern", getName());
@@ -25,7 +29,10 @@ public class Zauberer extends Spielfigur {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\n\tZauberpunkte\t = " + zauberpunkte;
+        public String toString() {
+            String text;
+            text = super.toString();
+        text = text + "\n\t" + ", Mana:" + " " + zauberpunkte;
+            return text;
     }
 }
