@@ -1,6 +1,5 @@
 package rollenspiel;
 
-import rollenspiel.KeineKraftExeption;
 
 public abstract class Spielfigur  {
     //Attribute erzeugen
