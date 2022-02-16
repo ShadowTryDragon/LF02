@@ -24,8 +24,9 @@ public class Girokonto extends Konto {
             auszahlen(betrag);
             girokonto.einzahlen(betrag);
             System.out.println("Überweisung Erfolgreich!");
+
         } else {
-            throw new KreditLimitUeberschreibenException();
+            throw new KreditLimitUeberschreibenException("Überweisung");
         }
     }
 

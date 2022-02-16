@@ -43,6 +43,7 @@ public abstract class Konto {
         if (betrag > 0 ) {
             this.kontoStand = kontoStand - betrag ;
             System.out.println("Einzahlung war Erfolgreich!");
+
         } else {
             throw new BetragNichtKorrektException("Einzazhlen");
         }
@@ -51,8 +52,8 @@ public abstract class Konto {
         if (kontoStand + kreditLimit >= betrag) {
             kontoStand = kontoStand - betrag;
             System.out.println("Auszahlung erfolgreich");
+
         } else if  ( kontoStand < 0 ) {
-            System.out.println("Du Hast Kein Geld");
             throw new KreditLimitUeberschreibenException("Auszahlen");
         }
 
