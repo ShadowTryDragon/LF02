@@ -32,6 +32,7 @@ public class test {
         }
         catch (KeineKraftExeption e ) {
             System.out.println(e.getMessage());}
-
+        z1.essen();
+        System.out.println(z1.getStaerkepunkte());
     }
 }
