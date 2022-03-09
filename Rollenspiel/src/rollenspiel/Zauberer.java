@@ -9,9 +9,9 @@ public class Zauberer extends Spielfigur {
         return zauberpunkte;
     }
 
-    public Zauberer(String name, int staerkepunkte, int zauberpunkte) {
+    public Zauberer(String name, int staerkepunkte, int zauberpunkte,  int munition, int leben) {
 
-        super(name, staerkepunkte);
+        super(name, staerkepunkte, munition, leben);
         this.zauberpunkte = zauberpunkte;
     }
 

@@ -3,8 +3,8 @@ package rollenspiel;
 public class Elfe extends Spielfigur {
 
 
-    public Elfe(String name, int staerkepunkte) {
-        super(name, staerkepunkte);
+    public Elfe(String name, int staerkepunkte, int munition, int leben) {
+        super(name, staerkepunkte, munition, leben );
     }
     public void rennen() throws KeineKraftExeption {
         if (getStaerkepunkte() >= 2) {

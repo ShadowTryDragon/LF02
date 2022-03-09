@@ -5,9 +5,11 @@ public abstract class Spielfigur  {
     //Attribute erzeugen
     private String name;
     private int staerkepunkte;
+    private int muniton;
+    private int leben;
 
     //Konstruktor
-    public Spielfigur(String name, int staerkepunkte) {
+    public Spielfigur(String name, int staerkepunkte, int muniton, int leben) {
         this.name = name;
         this.staerkepunkte = staerkepunkte;
     }
@@ -28,9 +30,23 @@ public abstract class Spielfigur  {
         this.staerkepunkte = staerkepunkte;
     }
 
+    public int getMuniton() {
+        return muniton;
+    }
+    public void setMuniton(int muniton) {
+        this.muniton = muniton;
+    }
+
+    public int getLeben() {
+        return leben;
+    }
+
+    public void setLeben(int leben) {
+        this.leben = leben;
+    }
 
     public void laufen() throws KeineKraftExeption {
-    if (getStaerkepunkte() >= 1) {
+    if (getStaerkepunkte() >= 1 && leben >=1){
         System.out.println(getName() + " läuft");
         staerkepunkte = staerkepunkte - 1;
     } else
@@ -38,7 +54,7 @@ public abstract class Spielfigur  {
 }
 
 public void klettern() throws KeineKraftExeption {
-    if (getStaerkepunkte() >= 2) {
+    if (getStaerkepunkte() >= 2 && leben >=1) {
         System.out.println(getName() + " klettert");
         staerkepunkte = staerkepunkte - 2;
     } else
@@ -50,16 +66,30 @@ public void essen()
 
 }
 public void kaempfen() throws KeineKraftExeption {
-    if (getStaerkepunkte() >= 3) {
+    if (getStaerkepunkte() >= 3 && leben >= 5 ) {
         System.out.println(getName() + " kämpft");
         staerkepunkte = staerkepunkte - 3;
     } else
         throw new KeineKraftExeption("kämpfen", getName());
 }
+public void schlafen()
+{
+    System.out.println(getName() + " erholt sich");
+staerkepunkte = staerkepunkte + 10;
+leben = leben + 5;
+}
+public void schiessen() throws KeineMunitionExeption {
+        if (getMuniton() >=1) {
+            System.out.println(getName() + "Schießt ");
+        muniton = muniton - 1;
+        }
+        else throw new KeineMunitionExeption("schießen", getName());
+}
     public String toString() {
         String text = "Name: " + name;
         text = text + "\n\t" + ", Stärke:" + " " + staerkepunkte;
         return text;
+        
     }
 
 

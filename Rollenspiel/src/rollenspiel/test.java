@@ -4,8 +4,8 @@ package rollenspiel;
 
 public class test {
     public static void main(String[] args) throws KeineKraftExeption {
-        Zauberer z1 = new Zauberer("Merlin",1,30);
-        Elfe e1 = new Elfe("Yechan", 20);
+        Zauberer z1 = new Zauberer("Merlin",3,30,2, 100);
+        Elfe e1 = new Elfe("Yechan", 20,4,100);
         System.out.println(z1.getName());
         System.out.println(e1.getName());
 
@@ -33,5 +33,11 @@ public class test {
         catch (KeineKraftExeption e ) {
             System.out.println(e.getMessage());}
 
+        try {
+            e1.schiessen();
+        }
+        catch (KeineMunitionExeption e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
