@@ -53,7 +53,7 @@ public abstract class Konto {
             kontoStand = kontoStand - betrag;
             System.out.println("Auszahlung erfolgreich");
 
-        } else if  ( kontoStand < 0 ) {
+        } else {
             throw new KreditLimitUeberschreibenException("Auszahlen");
         }
 
