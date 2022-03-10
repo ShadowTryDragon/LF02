@@ -23,4 +23,10 @@ public abstract class Gegenstand {
     public void setGegenstandWert(double gegenstandWert) {
         this.gegenstandWert = gegenstandWert;
     }
+
+    public String toString() {
+        String text = "ID: " + gegenstandID;
+        text = text + "\n\t" + ", Gegenstandwert:" + " " + gegenstandWert;
+        return text;
+    }
 }

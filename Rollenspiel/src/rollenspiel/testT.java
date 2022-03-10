@@ -2,7 +2,7 @@ package rollenspiel;
 
 
 
-public class test {
+public class testT {
     public static void main(String[] args) throws KeineKraftExeption {
         Zauberer z1 = new Zauberer("Merlin",3,30,2, 100);
         Elfe e1 = new Elfe("Yechan", 20,4,100);
@@ -39,5 +39,6 @@ public class test {
         catch (KeineMunitionExeption e) {
             System.out.println(e.getMessage());
         }
+
     }
 }

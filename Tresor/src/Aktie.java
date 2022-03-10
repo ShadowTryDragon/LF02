@@ -20,4 +20,12 @@ public class Aktie extends Gegenstand {
     public Aktie(int gegenstandID, double gegenstandWert, String unternehmenName, int nennWert ) {
         super(gegenstandID,gegenstandWert);
     }
+    public String toString() {
+        String text;
+        text = super.toString();
+        text = "Unternehmen: " + unternehmenName;
+        text = "Nennwert " + nennWert;
+        return text;
+
+    }
 }

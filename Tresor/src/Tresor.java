@@ -8,20 +8,29 @@ public class Tresor {
 
     }
 
-    public ArrayList getGegenstande(int id) {
-        return gegenstande;
+    public Gegenstand getGegenstand(int id) {
+        return gegenstande.get(id);
     }
 
-    public void reinlegen(Gegenstand gegenstand)  {
+    public void addGegenstand(Gegenstand gegenstand)  {
         gegenstande.add(gegenstand);
     }
 
-    public void rausnehmen(Gegenstand gegenstand) throws NichtVorhandenExeption {
+    public void removeGegenstand(Gegenstand gegenstand) throws GegenstandNichtVorhandenExeption {
 
- gegenstande.remove(gegenstand);
+ if(gegenstande.contains(gegenstand)) gegenstande.remove(gegenstand);
+ else throw new GegenstandNichtVorhandenExeption("ID");
     }
 
-    public void ermitteln(Gegenstand gegenstand) throws NichtVorhandenExeption {
-
+    public double berechneGesamtwert() {
+         gegenstande.size();
+         return berechneGesamtwert();
     }
+
+public String toString() {
+        String text;
+        text = "Inhalt des Tresors: " + gegenstande;
+        text = "Gesamter Wert = " + berechneGesamtwert();
+        return text;
+}
    }
