@@ -11,7 +11,12 @@ public class Ware {
     public String getBezeichnung() {
         return bezeichnung;
     }
-
+public Ware(String bezeichnung, double preis) {
+this.bezeichnung = bezeichnung;
+this.preis = preis;
+this.besonderheiten = new ArrayList<String>();
+this.maengel = new ArrayList<String>();
+}
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }

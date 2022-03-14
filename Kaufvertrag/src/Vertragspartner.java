@@ -1,4 +1,4 @@
-public abstract class Vertragspartner {
+public class Vertragspartner {
 
     private String vorname;
     private String nachname;
