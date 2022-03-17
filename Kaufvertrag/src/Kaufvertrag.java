@@ -3,8 +3,7 @@ public class Kaufvertrag {
     private  Vertragspartner verkaeufer;
     private  Ware ware;
     private  String zahlungsModalitaet;
-    public Kaufvertrag(Vertragspartner kaeufer, Vertragspartner verkaeufer, Ware ware) {
-        this.ware = ware;
+    public Kaufvertrag(Vertragspartner kaeufer, Vertragspartner verkaeufer) {
         this.verkaeufer = verkaeufer;
         this.kaeufer = kaeufer;
 
@@ -39,14 +38,12 @@ public class Kaufvertrag {
         this.kaeufer = kaeufer;
     }
 
+
     @Override
     public String toString() {
         return "Kaufvertrag{" +
                 "kaeufer=" + kaeufer +
-                ", verkaeufer=" + verkaeufer +
-                ", ware=" + ware +
-                ", zahlungsModalitaet='" + zahlungsModalitaet + '\'' +
-                '}';
+                ", verkaeufer=" + verkaeufer ;
     }
 }
 

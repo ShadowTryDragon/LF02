@@ -30,8 +30,10 @@ public class testmueller {
                 Vertragspartner verkaeufer = new Vertragspartner("Joachim", "Bredull", "9876543210");
                 Adresse2 a2 = new Adresse2("Auch zu Hause", "7", "28195", "Bremen");
                 verkaeufer.setAdresse(a2);
-
-                Kaufvertrag vertrag = new Kaufvertrag(verkaeufer, kaeufer, ware);
+               Vertragspartner vermittler = new Vertragspartner("Jonas","Smidt", "1237894560");
+                  Adresse2 a3 = new Adresse2("Nicht Zuhause", "7","28239", "Bremen");
+                  vermittler.setAdresse(a3);
+                Kaufvertrag vertrag = new Kaufvertrag(verkaeufer, kaeufer);
                 vertrag.setZahlungsModalitaet("Privater Barverkauf");
 
 

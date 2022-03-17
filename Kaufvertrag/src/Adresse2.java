@@ -40,12 +40,5 @@ public class Adresse2 {
         this.plz = plz;
     }
 
-    @Override
-    public String toString () {
-        String text = "Straße: " + strasse;
-        text = text + "\n\t" + " Hausnummer:" + " " + hausNr;
-        text = text + "\n\t" + " Postleittzahl:" + " " + plz;
-        text = text + "\n\t" + " Ort:" + " " + ort;
-        return text;
+
     }
-}
