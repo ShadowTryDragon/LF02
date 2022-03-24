@@ -87,10 +87,60 @@ public class KaufvertragPDF   {
         p9.add(" _________").setBold();
         Paragraph p10 = new Paragraph("Unterschrift des Verkäufers").setFontSize(10);
         p10.add(" _________").setBold();
+        p10.add("\n");
+        p10.add("\n");
+        p10.add("\n");
+        p10.add("\n");
+
+        // Paragraph 11  ( Neue Seite )
+
+        Paragraph p11 = new Paragraph(" Zusatzseite ").setFontColor(new DeviceRgb(50,50,150)).setFontSize(20).setBold();
+        p11.add("\n");
 
 
+        // Paragraph 12
+
+        Paragraph p12 = new Paragraph("Informationen zur Beratung" ).setFontColor(new DeviceRgb(100,100,300)).setFontSize(16).setBold();
+        p12.add("\n");
 
 
+        // Paragraph 13
+
+        Paragraph p13 = new Paragraph("Seite: www.EffosWeb.de");
+        p13.add("\n");
+        p13.add("Betreuende Person: Niels Bach");
+        p13.add("\n");
+        p13.add("Personummer: 32112564890");
+        p13.add("\n");
+        p13.add("Mitarbeiter ID: 23222");
+        p13.add("\n");
+        p13.add(" Email: Bachniels@gmail.com");
+        p13.add("\n");
+        p13.add("Telefonnummer: +49 0331237098");
+        p13.add("\n");
+
+        // Paragraph14
+
+        Paragraph p14 = new Paragraph("Informationen zur Bestellungen").setFontSize(16).setBold();
+
+        // Paragraph p15
+
+        Paragraph p15 = new Paragraph("Dauer der Lieferung in  Tagen: 5 Tage");
+        p15.add("\n");
+        p15.add(" Zustellung am XX.XX.XXXX");
+        p15.add("\n");
+        p15.add("Zustellende Adresse: Zu Hause 3a 28199 Bremen ");
+        p15.add("\n");
+        p15.add("Abholstelle: -");
+        p15.add("\n");
+        p15.add("Zustellender Dienst: DC Logistik");
+        p15.add("\n");
+        p15.add("Bitte seien sie zum Zustellungstermin zuhause");
+        p15.add("\n");
+
+        // Paragraph 16
+        Paragraph p16 = new Paragraph("Unterschrift des Zustellers: ").setFontSize(10);
+        p16.add(" D.rawker").setBold().setUnderline();
 
 
         document.add(p1);
@@ -103,6 +153,12 @@ public class KaufvertragPDF   {
         document.add(p8);
         document.add(p9);
         document.add(p10);
+        document.add(p11);
+        document.add(p12);
+        document.add(p13);
+        document.add(p14);
+        document.add(p15);
+        document.add(p16);
         document.close();
 
 
