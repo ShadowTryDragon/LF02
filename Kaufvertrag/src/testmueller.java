@@ -41,7 +41,6 @@ public class testmueller {
 
                 System.out.println(vertrag);
 
-
             }
 
 
