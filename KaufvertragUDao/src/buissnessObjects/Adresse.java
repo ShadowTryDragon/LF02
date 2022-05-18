@@ -1,4 +1,4 @@
-package businessObjects;
+package buissnessObjects;
 
 public class Adresse {
 

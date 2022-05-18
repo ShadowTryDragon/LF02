@@ -5,7 +5,7 @@ public class Vertragspartner {
 	private String vorname;
 	private String nachname;
 	private String ausweisNr;
-	private businessObjects.Adresse adresse;
+	private Adresse adresse;
 	
 	/**
 	 * Konstruktor.
@@ -68,16 +68,17 @@ public class Vertragspartner {
 	/**
 	 * Gibt die Adresse des Vertragspartners aus.
 	 * @return	Die Adresse des Vertragspartners.
+	 * @param adresse
 	 */
-	public businessObjects.Adresse getAdresse() {
-		return adresse;
+	public Adresse getAdresse(Adresse adresse) {
+		return this.adresse;
 	}
 	
 	/**
 	 * Aktualisiert die Adresse des Vertragspartners.
 	 * @param adresse	Die neue Adresse des Vertragspartners.
 	 */
-	public void setAdresse(businessObjects.Adresse adresse) {
+	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
 
