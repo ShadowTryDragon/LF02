@@ -20,7 +20,7 @@ public class VertragspartnerDao {
         try {
             connection = DriverManager.getConnection(CONNECTIONSTRING);
 // Abfrage erstellen
-            String sql = "SELECT * From Vertragspartner WHERE ausweisNR = ?";
+            String sql = "SELECT * From Vertragspartner WHERE ausweisNr = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, ausweisNr);
             // SQL ausführen
