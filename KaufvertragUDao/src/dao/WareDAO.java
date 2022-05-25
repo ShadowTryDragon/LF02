@@ -17,6 +17,7 @@ public class WareDAO {
 
     /**
      * Liest eine Ware auf Basis seiner Warennummer
+     *
      * @param warenNR die Warennummer
      * @return Die gewünschte Warennummer
      */
@@ -61,6 +62,7 @@ public class WareDAO {
         }
         return ware;
     }
+
     // Zweites
     public ArrayList<Ware> read() {
         Connection connection = null;
@@ -74,7 +76,6 @@ public class WareDAO {
             //SQL-Abfrage erstellen
             String sql = "SELECT * FROM Ware";
             preparedStatement = connection.prepareStatement(sql);
-
 
 
             //SQL-Abfrage ausführen
@@ -108,7 +109,7 @@ public class WareDAO {
         String besonderheiten = resultSet.getString("besonderheiten");
         String maengel = resultSet.getString("maengel");
 
-        Ware ware = new Ware(nr,bezeichnung, preis);
+        Ware ware = new Ware(nr, bezeichnung, preis);
         ware.setBeschreibung(bechreibung);
         if (besonderheiten != null) {
             String[] besonderheitenArray = besonderheiten.split("; ");
@@ -120,13 +121,14 @@ public class WareDAO {
         if (maengel != null) {
             String[] maengelArray = maengel.split("; ");
             for (String m : maengelArray) {
-                ware.getMaengelListe().add(m.trim() );
+                ware.getMaengelListe().add(m.trim());
             }
         }
 
         return ware;
     }
-    public void  delete(String nr) {
+
+    public void delete(String nr) {
         connection = null;
         PreparedStatement preparedStatement = null;
 
@@ -142,11 +144,60 @@ public class WareDAO {
         } finally {
             try {
                 connection.close();
-            }
-            catch(SQLException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
 
+        }
+    }
+
+    public void insert(int nr, String bezeichnung, String beschreibung, double preis) {
+        connection = null;
+        String maengel = null;
+        String besonderheiten = null;
+        String sql = "Insert Into vertragspartner ( warenNr, bezeichnung, beschreibung , mängel , besonderheiten) VALUES(" + nr + beschreibung + preis + besonderheiten + maengel + ")";
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, nr);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next())
+
+                nr = resultSet.getInt("WarenNr");
+            ;
+            bezeichnung = resultSet.getString("Bezeichnung");
+            beschreibung = resultSet.getString("Beschreibung");
+            besonderheiten = resultSet.getString("Besonderheiten");
+            maengel = resultSet.getString("Mängel");
+
+            Ware ware = new Ware(nr, bezeichnung, preis);
+            ware.setBezeichnung(bezeichnung);
+
+            if (besonderheiten != null) {
+                String[] besonderheitenArray = besonderheiten.split("; ");
+                for (String b : besonderheitenArray) {
+                    ware.getBesonderheitenListe().add(b.trim());
+                }
+            }
+            if (maengel != null) {
+                String[] maengelArray = maengel.split("; ");
+                for (String m : maengelArray) {
+                    ware.getMaengelListe().add(m.trim());
+                }
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                connection.close();
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

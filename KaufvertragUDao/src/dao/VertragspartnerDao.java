@@ -114,12 +114,12 @@ public class VertragspartnerDao {
         PreparedStatement preparedStatement = null;
 
 
+
         try {
             connection = DriverManager.getConnection(CONNECTIONSTRING);
             String sql = "DELETE FROM vertragspartner WHERE ausweisNr = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, nr);
-            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -132,4 +132,38 @@ public class VertragspartnerDao {
 
         }
     }
+    public void insert(String nr, String vorname, String nachname, String strasse, String hausNr, String plz, String ort ) {
+        connection = null;
+        String sql = "Insert Into vertragspartner ( nr, vorname, nachname , strasse , hausNr , plz , ort + ) VALUES(" + nr + vorname + nachname + strasse + hausNr + plz + ort + ")";
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,nr);
+           ResultSet resultSet = preparedStatement.executeQuery();
+           while (resultSet.next())
+
+               nr = resultSet.getString("ausweisNr");
+            vorname = resultSet.getString("vorname");
+             nachname = resultSet.getString("nachname");
+             strasse = resultSet.getString("strasse");
+             hausNr = resultSet.getString("hausNr");
+             plz = resultSet.getString("plz");
+             ort = resultSet.getString("ort");
+        }
+catch (SQLException e) {
+            e.printStackTrace();
+}
+        finally {
+            try {
+                connection.close();
+            }
+            catch (SQLException e ) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 }
