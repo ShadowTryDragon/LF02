@@ -132,25 +132,22 @@ public class VertragspartnerDao {
 
         }
     }
-    public void insert(String nr, String vorname, String nachname, String strasse, String hausNr, String plz, String ort ) {
+    public void insert(Vertragspartner vertragspartner) {
         connection = null;
-        String sql = "Insert Into vertragspartner ( nr, vorname, nachname , strasse , hausNr , plz , ort + ) VALUES(" + nr + vorname + nachname + strasse + hausNr + plz + ort + ")";
         PreparedStatement preparedStatement = null;
 
         try {
-            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            String sql = "INSERT INTO vertragspartner VALUES(?,?,?,?,?,?,?)";
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,nr);
-           ResultSet resultSet = preparedStatement.executeQuery();
-           while (resultSet.next())
+            preparedStatement.setString(1, vertragspartner.getAusweisNr());
+            preparedStatement.setString(2, vertragspartner.getVorname());
+            preparedStatement.setString(3, vertragspartner.getNachname());
+            preparedStatement.setString(4, vertragspartner.getAdresse().getStrasse());
+            preparedStatement.setString(5, vertragspartner.getAdresse().getHausNr());
+            preparedStatement.setString(6, vertragspartner.getAdresse().getPlz());
+            preparedStatement.setString(7, vertragspartner.getAdresse().getOrt());
 
-               nr = resultSet.getString("ausweisNr");
-            vorname = resultSet.getString("vorname");
-             nachname = resultSet.getString("nachname");
-             strasse = resultSet.getString("strasse");
-             hausNr = resultSet.getString("hausNr");
-             plz = resultSet.getString("plz");
-             ort = resultSet.getString("ort");
+            preparedStatement.executeUpdate();
         }
 catch (SQLException e) {
             e.printStackTrace();

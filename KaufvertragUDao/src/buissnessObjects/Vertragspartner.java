@@ -6,7 +6,7 @@ public class Vertragspartner {
 	private String nachname;
 	private String ausweisNr;
 	private Adresse adresse;
-	
+
 	/**
 	 * Konstruktor.
 	 * @param vorname	Der Vorname des Vertragspartners.
@@ -16,7 +16,7 @@ public class Vertragspartner {
 		this.vorname = vorname;
 		this.nachname = nachname;
 	}
-	
+
 	/**
 	 * Gibt den Vornamen des Vertragspartners aus.
 	 * @return	Der Vorname des Vertragspartners.
@@ -24,7 +24,7 @@ public class Vertragspartner {
 	public String getVorname() {
 		return vorname;
 	}
-	
+
 	/**
 	 * Aktualisiert den Vornamen des Vertragspartners.
 	 * @param vorname Der neue Vorname des Vertragspartners.
@@ -32,7 +32,7 @@ public class Vertragspartner {
 	public void setVorname(String vorname) {
 		this.vorname = vorname;
 	}
-	
+
 	/**
 	 * Gibt den Nachnamen des Vertragspartners aus.
 	 * @return	Der Nachname des Vertragspartners.
@@ -40,7 +40,7 @@ public class Vertragspartner {
 	public String getNachname() {
 		return nachname;
 	}
-	
+
 	/**
 	 * Aktualisiert den Nachnamen des Vertragspartners.
 	 * @param nachname	Der neue Nachname des Vertragspartners.
@@ -48,7 +48,7 @@ public class Vertragspartner {
 	public void setNachname(String nachname) {
 		this.nachname = nachname;
 	}
-	
+
 	/**
 	 * Gibt die Ausweisnummer des Vertragspartners aus.
 	 * @return	Die Ausweisnummer des Vertragspartners.
@@ -56,7 +56,7 @@ public class Vertragspartner {
 	public String getAusweisNr() {
 		return ausweisNr;
 	}
-	
+
 	/**
 	 * Aktualisiert die Ausweisnummer des Vertragspartners.
 	 * @param ausweisNr	Die neue Ausweisnummer des Vertragspartners.
@@ -64,16 +64,15 @@ public class Vertragspartner {
 	public void setAusweisNr(String ausweisNr) {
 		this.ausweisNr = ausweisNr;
 	}
-	
+
 	/**
 	 * Gibt die Adresse des Vertragspartners aus.
 	 * @return	Die Adresse des Vertragspartners.
-	 * @param adresse
 	 */
-	public Adresse getAdresse(Adresse adresse) {
-		return this.adresse;
+	public Adresse getAdresse() {
+		return adresse;
 	}
-	
+
 	/**
 	 * Aktualisiert die Adresse des Vertragspartners.
 	 * @param adresse	Die neue Adresse des Vertragspartners.
@@ -94,6 +93,4 @@ public class Vertragspartner {
 		return text;
 	}
 
-	 {
-	}
 }

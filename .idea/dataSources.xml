@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Boris59\IdeaProjects\lol\KaufvertragUDao\src\data\Kaufvertrag.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Artikel.db" uuid="22d4facd-0421-44f8-9d81-d67e2d18e8c9">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:H:/DB Browser for SQLite/Artikel.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
