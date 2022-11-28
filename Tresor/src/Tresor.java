@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Tresor {
     private ArrayList<Gegenstand> gegenstande;
+    double gesamtwert = 0;
 
     public Tresor() {
         gegenstande = new ArrayList<Gegenstand>();
@@ -27,16 +28,16 @@ public class Tresor {
         else throw new GegenstandNichtVorhandenException("ID");
 }
 
-    public double berechneGesamtwert() {
-        gegenstande.size();
-        return berechneGesamtwert();
+    public double berechneGesamtwert(){
+        for ( Gegenstand v: gegenstande){
+            v.getGegenstandWert();
+            gesamtwert += v.getGegenstandWert();
+        }
+        return gesamtwert;
     }
-
-    public String toString() {
-        String text;
-        text = "Inhalt des Tresors: " + gegenstande;
-        text = "Gesamter Wert = " + berechneGesamtwert();
+    @Override
+    public String toString(){
+        String text=  "\nGegenstand:\t :"+ gegenstande;
         return text;
     }
 }
-
